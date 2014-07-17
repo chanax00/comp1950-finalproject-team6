@@ -14,6 +14,7 @@
 		<link rel = "stylesheet" href = "./css/basic.css" title = "Basic Page Style" />
 		<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 		<script type = "text/javascript" src = "http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type = "text/javascript" src = "./js/common.js"></script>
 		<script type = "text/javascript" src = "./js/lecture.js"></script>
 	</head>
 	<body>
@@ -44,7 +45,14 @@
 						<li>project work</li>
 					</ol>
 				</div>
-				<div id = "card_list">
+				<div id = "card_list"></div>
+				<div id = "link_list"></div>
+				<div id = "customization">
+					<h2>Customization</h2>
+					<form>
+						<label for = "cust_bg_img">Background Image</label>
+						<input id = "cust_bg_img" name = "cust_bg_img" type = "text"/>
+					</form>
 				</div>
 			</section>
 		</div>
@@ -59,8 +67,8 @@
 			<div id = "option_icons">
 				<div id = "icon_sessions" class = "option_icon" onclick = "clickOption('sessions')"></div>
 				<div id = "icon_cards" class = "option_icon" onclick = "clickOption('cards')"></div>
-				<div id = "icon_hyperlinks" class = "option_icon" onclick = "clickOption('hyperlinks')"></div>
-				<div id = "icon_customize" class = "option_icon" onclick = "clickOption('customize')"></div>
+				<div id = "icon_links" class = "option_icon" onclick = "clickOption('links')"></div>
+				<div id = "icon_customization" class = "option_icon" onclick = "clickOption('customization')"></div>
 			</div>
 		</div>
 	</body>

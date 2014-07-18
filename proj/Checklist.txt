@@ -57,6 +57,8 @@ B. Protosite                                                                Owne
 NOTE:
 1.  There will be no link from the proto-site back to the metasite.
     I think the proto-site should be self contained.
+2.  The meta site will have a different design than the proto-site
+    as per requirements.
 	
 *NOT REQUIRED
 1.  browse, search, login, view news, send email, call, explore. 

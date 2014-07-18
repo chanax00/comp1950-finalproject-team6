@@ -1,0 +1,61 @@
+
+/* Navigation related styles */
+nav ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+font-weight:bold;
+
+
+
+}
+
+nav li { margin: 0 0 3px 0; padding-right:20px;}
+
+nav a
+{
+display: block;
+padding: 6px 0px 6px 20px;
+border: 1px solid #333;
+width: 130px;
+height:40px;
+background-color: #999;
+background-image: url(../images/menu-n.jpg);
+background-repeat:no-repeat;
+background-position:center;
+font-style:none;
+
+}
+
+nav a:link, #navlist a:visited
+{
+border: 3px solid #333;
+color:black;
+text-decoration: none;
+font-style:normal;
+font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+font-size:large;
+
+}
+
+nav a:hover
+{
+border: 3px solid #333;
+background-color: #F60;
+background-image: url(../images/menu-h.jpg);
+background-repeat:no-repeat;
+background-position:center;
+color: #333;
+} 
+
+.navmenu{
+	float:left;
+	margin-top:20px;
+	margin-bottom:40px;
+	top:100px;
+
+
+}
+

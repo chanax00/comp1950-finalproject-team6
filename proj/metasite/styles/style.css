@@ -63,3 +63,10 @@ color: #333;
 header{
 	clear: both;
 }
+
+
+body{
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+}

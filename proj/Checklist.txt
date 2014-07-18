@@ -1,6 +1,14 @@
 COMP 1950 Final Project Check List:
 
-                                                                Owner     DraftDone?   CompletelyFinished?  TargetDate
+A. Meta Site (CSS different than protosite)                                 Owner     DraftDone?   CompletelyFinished?  TargetDate
+1. Introduction Page-describes project and members of team.                 Jason      No
+2. Link to the Protosite: actual website                                    Jason      No
+3. SiteMap (links are not to work)                                          Jason
+4. Proto-site Rationale                                                     Jason      No
+
+
+
+B. Protosite                                                                Owner     DraftDone?   CompletelyFinished?  TargetDate
 1.  link to section for web development information
 2.  link to resources (text books & links to other website)
 3.  link to exercises
@@ -29,13 +37,9 @@ COMP 1950 Final Project Check List:
 19. Test final website with Opera.
 20. Design the quiz form but do not need it working.  Can
     have a timer but do not have it working.
-21. Introduction Page-describes project and members of team.                  No
-    Plus link to the rest of the project.
 22. Proto-site Home Page
 23. Proto-site Lecture Page                                        S&C        No
 24. Proto-site Quiz Page                                           Jason      No
-25. Proto-site Rationale                                           Jason      No
-26. Proto-site SiteMap (links are not to work)
 27. Provide Jason with list of CSS3 and Jquery for rationale       S&C        No	
 28. Allow website to be adjusted for 2 widths (but no for 
     smartphones) - user Media Query

@@ -9,22 +9,18 @@
 				<div id = "comp1950">COMP 1950: Intermediate Web Design and Development</div>
 			</div>
 			<nav id = "main_nav">
-				<div id = "main_nav_home"<?php
+				<div id = "main_nav_home<?php
 				if ($page != "index")
-					echo ' onclick = "location.href = \'index.php\'"';?>>
-				<div></div></div>
-				<div id = "main_nav_lecture"<?php
+					echo '_bw" onclick = "location.href = \'index.php\'';?>"></div>
+				<div id = "main_nav_lecture<?php
 				if ($page != "lecture")
-					echo ' onclick = "location.href = \'lecture.php\'"';?>>
-				<div></div></div>
-				<div id = "main_nav_practice"<?php
+					echo '_bw" onclick = "location.href = \'lecture.php\'';?>"></div>
+				<div id = "main_nav_practice<?php
 				if ($page != "practice")
-					echo ' onclick = "location.href = \'practice.php\'"';?>>
-				<div></div></div>
-				<div id = "main_nav_quiz"<?php
+					echo '_bw" onclick = "location.href = \'practice.php\'';?>"></div>
+				<div id = "main_nav_quiz<?php
 				if ($page != "quiz")
-					echo ' onclick = "location.href = \'quiz.php\'"';?>>
-				<div></div></div>
+					echo '_bw" onclick = "location.href = \'quiz.php\'';?>"></div>
 			</nav>
 			<div id = "option_icons">
 				<div id = "icon_sessions" class = "option_icon" onclick = "clickOption('sessions')"></div>

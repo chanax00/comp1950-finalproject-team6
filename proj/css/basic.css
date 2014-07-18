@@ -1,0 +1,330 @@
+/*
+
+	COMP 1950 Home Page CSS
+	File Name: 		basic.css
+	Author:			Calvin Jun
+	Student Number:	A00237412
+
+*/
+
+body{
+	background-color: #ababff;
+	position: relative;
+}
+
+#top_panel{
+	width: 100%;
+	height: 120px;
+	background-color: #ababab;
+	box-shadow: 0px 4px 8px black;
+	margin: 0px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+.body{
+	width: 1024px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 16px;
+	font-family: 'Arial', sans-serif;
+	position: relative;
+}
+
+#title{
+	position: fixed;
+	top: 0px;
+	width: 1024px;
+	height: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial, sans-serif;
+	font-size: 0.85em;
+	color: black;
+	border: 1px solid black;
+	background-color: #dedede;
+}
+
+#bcit{
+	margin-left:24px;
+}
+
+#comp1950{
+	float: right;
+	position: relative;
+	top: -16px;
+	margin-right:24px;
+}
+
+#main_nav{
+	position: fixed;
+	top: 18px;
+	margin-left: 8px;
+}
+
+#main_nav div{
+	width: 100px;
+	height: 75px;
+	margin: 12px 2px;
+	position: relative;
+	float: left;
+	box-shadow: 0px 0px 4px black;
+}
+
+#main_nav div:hover{
+	border: 2px solid #80ff80;
+}
+
+#main_nav_home{
+	background: url('../img/home.png');
+	border: 2px solid yellow;
+}
+
+#main_nav_home_bw{
+	background: url('../img/home_bw.png');
+	border: 2px solid white;
+}
+
+#main_nav_lecture{
+	background: url('../img/lecture.png');
+	border: 2px solid yellow;
+}
+
+#main_nav_lecture_bw{
+	background: url('../img/lecture_bw.png');
+	border: 2px solid white;
+}
+
+#main_nav_practice{
+	background: url('../img/practice.png');
+	border: 2px solid yellow;
+}
+
+#main_nav_practice_bw{
+	background: url('../img/practice_bw.png');
+	border: 2px solid white;
+}
+
+#main_nav_quiz{
+	background: url('../img/quiz.png');
+	border: 2px solid yellow;
+}
+
+#main_nav_quiz_bw{
+	background: url('../img/quiz_bw.png');
+	border: 2px solid white;
+}
+
+#option_icons{
+	position: fixed;
+	top: 36px;
+	left: 816px;
+	width: 300px;
+	height: 80px;
+}
+
+.option_icon{
+	width: 64px;
+	height: 64px;
+	position: relative;
+	border: 2px solid none;
+	margin: 0px 4px;
+}
+
+#icon_sessions{
+	background: url('../img/sessions.png');
+}
+
+#icon_cards{
+	background: url('../img/cards.png');
+	left: 80px;
+	top: -66px;
+}
+
+#icon_links{
+	background: url('../img/hyperlink.png');
+	left: 160px;
+	top: -132px;
+}
+
+#icon_customization{
+	background: url('../img/customize.png');
+	left: 240px;
+	top: -198px;
+}
+
+section{
+	margin-top: 120px;
+	float: left;
+	position: static;
+}
+
+article{
+	width: 480px;
+	min-height: 200px;
+	background-color: white;
+	border: gray solid 1px;
+	box-shadow: 4px 4px 12px black;
+	margin: 12px 8px 48px;
+	padding: 8px 24px 70px;
+	position: relative;
+}
+
+#banner,#titlebar{ display: none; }
+h1, h2, .contblock{ display: none; }
+#footer, #rightcont{ display: none; }
+
+#arrow_left{
+	background: url('../img/arrow_left.png');
+	width: 48px;
+	height: 48px;
+	margin: 0px 4px;
+	position: absolute;
+	right: 80px;
+	bottom: 16px;
+}
+
+#arrow_left:hover {
+	background: url('../img/arrow_left_hover.png');
+}
+
+#arrow_left:active {
+	background: url('../img/arrow_left_active.png');
+}
+
+#arrow_right{
+	background: url('../img/arrow_right.png');
+	width: 48px;
+	height: 48px;
+	margin: 0px 4px;
+	position: absolute;
+	right: 22px;
+	bottom: 16px;
+}
+
+#arrow_right:hover {
+	background: url('../img/arrow_right_hover.png');
+}
+
+#arrow_right:active {
+	background: url('../img/arrow_right_active.png');
+}
+
+.dark_panel{
+	background-color: black;
+	box-shadow: 4px 4px 12px black;
+	border: 2px solid gray;
+	width: 400px;
+	min-height: 120px;
+	opacity: 0.5;
+	display: block;
+	position: absolute;
+	color: white;
+	top: 131px;
+	left: 561px;
+}
+
+#session_list{
+	width: 400px;
+	min-height: 120px;
+	margin: 12px 16px 48px;
+	padding: 0px;
+	color: white;
+	border: 1px black solid;
+	position: relative;
+	display: none;
+}
+
+#session_list ol{
+	font-family: "Verdana";
+	font-size: 1.1em;
+	margin: 24px 16px 24px 24px;
+	line-height: 130%;
+}
+
+#session_list ol li{
+	cursor: pointer;
+}
+
+#card_list{
+	width: 400px;
+	min-height: 120px;
+	margin: 12px 16px 48px;
+	padding: 0px;
+	color: white;
+	border: 1px black solid;
+	position: relative;
+	display: none;
+}
+
+#card_list ul{
+	font-family: "Verdana";
+	font-size: 1.1em;
+	margin: 24px 16px 24px 0px;
+	line-height: 130%;
+}
+
+#card_list ul li{
+	color: #dedede;
+	cursor: pointer;
+}
+
+#card_list ul li:hover{
+	color: white;
+}
+
+#card_list ul li:active{
+	color: white;
+}
+
+#link_list{
+	width: 400px;
+	min-height: 120px;
+	margin: 12px 16px 48px;
+	padding: 0px;
+	color: white;
+	border: 1px black solid;
+	position: relative;
+	display: none;
+}
+
+#link_list ul{
+	font-family: "Verdana";
+	font-size: 1.0em;
+	margin: 24px 16px 24px 0px;
+	line-height: 130%;
+}
+
+#link_list ul li a{
+	color: #dedede;
+	display: block;
+	margin-bottom: 16px;
+	cursor: pointer;
+}
+
+#link_list ul li a:hover{
+	color: white;
+}
+
+#link_list ul li a:active{
+	color: yellow;
+}
+
+#customization{
+	width: 400px;
+	min-height: 120px;
+	margin: 12px 16px 48px;
+	padding: 0px;
+	color: white;
+	border: 1px black solid;
+	position: relative;
+	display: none;
+}
+
+#customization form{
+	margin: 16px;
+}
+

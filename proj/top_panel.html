@@ -1,0 +1,31 @@
+		<?php
+		$scriptname = explode('/', $_SERVER["SCRIPT_NAME"]);
+		$page = @ereg_replace(".php$", "", trim($scriptname[count($scriptname) - 1]));
+		?>
+		<div id = 'top_panel'></div>
+		<div class = 'body'>
+			<div id = "title">
+				<div id = "bcit">British Columbia Institute of Technology</div>
+				<div id = "comp1950">COMP 1950: Intermediate Web Design and Development</div>
+			</div>
+			<nav id = "main_nav">
+				<div id = "main_nav_home<?php
+				if ($page != "index")
+					echo '_bw" onclick = "location.href = \'index.php\'';?>"></div>
+				<div id = "main_nav_lecture<?php
+				if ($page != "lecture")
+					echo '_bw" onclick = "location.href = \'lecture.php\'';?>"></div>
+				<div id = "main_nav_practice<?php
+				if ($page != "practice")
+					echo '_bw" onclick = "location.href = \'practice.php\'';?>"></div>
+				<div id = "main_nav_quiz<?php
+				if ($page != "quiz")
+					echo '_bw" onclick = "location.href = \'quiz.php\'';?>"></div>
+			</nav>
+			<div id = "option_icons">
+				<div id = "icon_sessions" class = "option_icon" onclick = "clickOption('sessions')"></div>
+				<div id = "icon_cards" class = "option_icon" onclick = "clickOption('cards')"></div>
+				<div id = "icon_links" class = "option_icon" onclick = "clickOption('links')"></div>
+				<div id = "icon_customization" class = "option_icon" onclick = "clickOption('customization')"></div>
+			</div>
+		</div>

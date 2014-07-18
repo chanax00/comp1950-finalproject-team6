@@ -1,0 +1,330 @@
+<div id="docbox">
+
+	<div id="maincont">
+		<h1>lecture four: css layouts</h1>
+		<h2>Agenda</h2>
+		<div class="contblock">
+			<ul>	
+				<li>CSS Backgrounds, Sprites</li>
+				<li>CSS Reset</li>
+				<li>Box Model idiosyncracies</li>
+				<li>Positioning techniques</li>
+				<li>Navigation</li>
+			</ul>
+		</div>
+
+<h2>CSS Backgrounds</h2>
+<div class="contblock">
+	<p>CSS supports several useful <a href="http://www.htmlgoodies.com/beyond/css/article.php/3868361">background related properties</a>.</p>
+	<ul>
+		<li><code>background-color:</code><br />assign the background color</li>
+		<li><code>background-image: url()</code> <br />applies an image as the background</li>
+		<li><code>background-repeat: repeat | repeat-x | repeat-y | no-repeat</code><br /> determines how a background iamge will repeat display</li>
+		<li><code>background-position: &lt;percentage> | &lt;length> | left | center | right</code><br /> the position can be assigned with either pixels or percent<br />
+		<code>background-position: 100px 100px;</code><br />
+		using pixels, you can position the x y starting point for the background image. 0px 0px is the default<br />
+		<code>background-position: 50% 0px;</code><br />
+		using percentages you can center a background image, or with varying percentages can create a <a href="/comp1950/downloads/parallax_background.zip">parallax background</a> effect
+		</li>
+	</ul>
+	<p>The pattern to follow when using the background property to define several space delimited values at once:<br /><code>background: &lt;background-color> | &lt;background-image> | &lt;background-repeat> | &lt;background-attachment> | &lt;background-position></code></p>
+
+</div>
+
+<h2>Sprites</h2>
+<div class="contblock">
+<p>Each image on your website requires a separate request/response between the client and server. Using one larger image instead of several smaller images can result in a more effiecient client/server transaction, since it reduces the number of requests/responses that need to occur. </p>
+<p>This is especially useful for images that are NOT an important part of your foreground content, but sprites perfect for icons, textures and images used purely for aesthetics</p>
+	<ol>
+	<li>use a <a href="http://csssprites.com/">sprite generator</a> or an image program like photoshop to create a strip or grid of images. this is also an ideal time to determine the correct offsets</li> 
+	<li>use an HTML tag ('div' or 'p' or etc) any block element</li>
+	<li>define a fixed height and width (large enough to show the image you need to display)</li>
+	<li>use the url and position offset values
+	  for example:
+	  <ul>
+		<li><code>background: url("myimage.jpg") xOffset yOffset;</code><br />
+		<li><code>background: url("myimage.jpg") 0px 0px;</code><br />
+	  places myimage.jpg in the top left corner ( 0px 0px )</li>
+		<li><code>background: url("myimage.jpg") 50px 0px;</code><br />
+	  places myimage.jpg at the top, but shifts the start of the image 50 pixels to the right (offset 50px)</li>
+		<li><code>background: url("myimage.jpg") -50px 0px;</code><br />
+	  places myimage.jpg at the top, but shifts the start of the image 50 pixels to the left (offset -50px)</li>
+	  </ul>
+		
+
+		</li>
+	</ol>
+
+<h4>Advantages of using sprites</h4>
+<ul>
+	<li>fewer http requests between server and client</li>
+	<li>a single composite image is almost always smaller in filesize compared to the sum size of the images made separately</li>
+	<li>perfect for icons, buttons, and graphics that contribute to the aesthetic of the page </li>
+</ul>
+<h4>Disadvantages of using sprites</h4>
+<ul>
+	<li>not all images should be displayed as backgrounds! important content graphics should always use the img tag. this way the images will contribute to search engine optimization and maximize accessability</li>
+	<li>time spent building the composite sprite image(s) increases</li>
+	<li>time coding and maintaining the CSS increases</li>
+</ul>
+	<ul>
+		<li><a href="http://css-tricks.com/css-sprites/">Sprite introduction</a></li>
+		<li><a href="http://csssprites.com/">Sprite generator</a></li>
+	</ul>
+
+</div>
+<h2>Sprite Example and Exercise</h2>
+<div class="contblock">
+	<ul>
+		<li><a href="/comp1950/downloads/sprites_example.zip">Download</a> and extract the source files</li>
+		<li>examine the source code to see how the example sprite is being used</li>
+		<li>create your own css rules for displaying the second sprite images</li>
+		
+		<li><a href="/comp1950/downloads/sprites_example_solution.zip">Download a sample solution</a></li>
+		
+	</ul>
+
+</div>
+
+
+	<h2>CSS Reset</h2>
+	<div class="contblock">
+	
+		<p>An excellent way to instruct a browser to set attributes to predictable values</p>
+		<p>Custom created and self-hosted, or public domain CDN hosted options and everything in between!</p>
+		<ul>
+			<li>Content is now predictable in most every browser</li>
+			<li>Minimizes odd behaviour in rendering</li>
+			<li>Easy to create custom rules for CMS-controlled sites</li>
+		</ul>
+		
+		<p>There are some excellent resets out there, some of the better ones can be found at <a href="http://www.cssreset.com/">cssreset.com</a></p>
+		<p>A new and innovative version that was recently released: <a href="http://necolas.github.com/normalize.css/">normalize.css</a>
+		
+		</p><ul>
+			<li>Doesn't just reset, but takes advantage of some of the built-in features of various tags</li>
+			<li>Actually corrects bugs rather than just resetting everything</li>
+			<li>Used by <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a></li>
+		</ul>
+		
+		<h3>Using CSS Resets</h3>
+		<ul>
+			<li>Works just like any other CSS you link to</li>
+			<li>Can work embedded as well</li>
+			<li><strong>Important</strong>: use before any other stylesheets!</li>
+			<li>Remember to code your CSS from General to Specific. A reset is meant to be very general, allowing you to build on top of it</li>
+		</ul>
+	</div>
+
+			<h2>CSS Positioning</h2>
+			<div class="contblock">
+
+			<p>Building proper CSS-based layouts requires an understanding of how positioning works, which is based largely on the Box Model concept.</p>
+
+			<p>A lot has been written about the fabled <a href="http://tantek.com/CSS/Examples/boxmodelhack.html">Box Model</a> and it's lack of support in certain browsers.</p>
+
+			<p>It actually comes down to an <em>interpretation</em> of the box model concept that was implemented differently on different browsers.</p>
+
+			<p>Box model basics:</p>
+			<ul>
+				<li>All elements are built around the concept of a <a href="box_model.gif">box</a></li>
+				<li>Every element is contained in a Box of some sort or another</li>
+				<li>Each element has a content core, surrounded by optional padding, borders, margins</li>
+				<li>These are the 'building blocks' of a CSS layout, with both inline and block-level elements having these properties</li>
+				<li><strong>Width</strong> refers to left inner edge to the right inner edge</li>
+				<li><strong>Height</strong>  refers to the top inner edge to the bottom inner edge</li>
+				<li>This can cause problems if elements are near one another with considerable padding or margins</li>
+				<li>Paddings and borders add to the dimensions of the box model.</li>
+			    <li>Additionally, margins will collapse vertically, but not horizontally.  This can lead to some confusion when trying to build out a well-positioned page</li>
+			</ul>
+
+			<p>In the following example:</p>
+
+			<pre><code>&lt;body&gt;
+	&lt;div&gt;
+		&lt;p&gt;This is some text&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+			<ul>
+				<li>The &lt;p&gt; block is contained within the &lt;div&gt; block, which is, in turn, contained inside the &lt;body&gt; block.  </li>
+				<li>This is crucial for visual layout, as this will determine how your layout looks.</li>
+				<li>Inline blocks are not as crucial, as they will flow alongside other elements and have little outcome on layout.</li>
+			</ul>
+
+			<p>In order to have some control over how these boxes are placed, block boxes (like <code>div</code> or <code>p</code> or <code>h1</code>) act as <strong>containing blocks</strong> to the content and blocks inside.</p>
+
+			<p>Containing blocks are used to determine the position and dimensions of the elements within it.</p>
+
+			<pre><code>&lt;div id="main"&gt;
+  &lt;p style="width:25%;"&gt;
+    This paragraph will be 25% the width of the parent div,
+    not 25% of the page
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+			<p>Download and walk through some <a href="/comp1950/downloads/css_box_model.zip">box model code examples</a> to get a better understanding.</p>
+
+			<h3>Positioning Details</h3>
+			<ul>
+				<li><strong>Normal Flow</strong> - these are generally text that 'flows' from left to right (in Western society).  Normal flow is the default scheme with block elements flowing from the top downwards.  Inline elements flow left to right</li>
+				<li><strong>Normal Flow</strong> also sees your vertical margins collapsing.  Only the larger of the two margins are used when calculating distance between the two.
+				</li><li><strong>Non-replaced element</strong> - these elements are actually contained inside the document. </li>
+				<li>
+					<ul><li><em>Example:</em> a paragraph of text.</li></ul>
+				</li>
+				<li><strong>Replaced element</strong> - these are not actually contained in the document, but are linked to.</li>
+				<li>
+					<ul><li><em>Example:</em> &lt;img&gt; or &lt;input&gt;</li></ul>
+				</li>
+			</ul>
+
+			<h3>Floating and Positioning</h3>
+			<ul>
+				<li>In order to have your content show in an appropriate location, you will need to either float or position your containers.</li>
+				<li><strong>Positioning</strong> is fairly strightforward and has been around for a long time.</li>
+				<li>Declare exactly where an element box will appear compared to where it would normally be</li>
+				<li><strong>4 kinds:</strong>
+				<ul><li><strong>Static:</strong> Generated as normal</li>
+				<li><strong>Relative:</strong> The box is offset by some distance</li>
+				<li><strong>Absolute:</strong> The box is no longer part of the flow of the document and is placed with respect to its containing block.</li>
+				<li><strong>Fixed:</strong> Similar to absolute, but it is attached to a specific location</li></ul>
+				</li>
+				<li><strong>Floating </strong>was introduced in CSS1 and gives rise to a lot of difficulties for many users.</li>
+				<li>Similar to &lt;img src="img.gif" align="right"&gt; which 'floats' the image to the right of the content.</li>
+				<li>Other content will float around floated elements.</li>
+				<li>Consecutive floats (with similar alignment like <code>right</code> or <code>left</code>) will attempt to float using the same top-line, but will collapse to another line if space does not permit</li>
+			<li>Consecutive <code>right</code> floats will appear in reverse order on the final render</li>
+				<li>Other floated areas can create some interesting effects if DIVs are not floated correctly</li>
+				<li>Backgrounds can cause havoc with floated elements, as much of the time, you will see the background coming through</li>
+				<li>To make sure elements don't fall into a floated element, you can use <code>clear: left | right | both;</code></li>
+			</ul>
+			<p></p>
+
+			<p>Walk through some <a href="/comp1950/downloads/css_positioning.zip">css positioning code examples</a> to get a better understanding.</p>
+</div>
+<h2>Exercise</h2>
+<div class="contblock">
+	<p>Try walking through a few <a href="scenarios.html">positioning scenarios</a></p>
+</div>
+
+			<h2>Layout Basics</h2>
+			<div class="contblock">
+			<ul>
+				<li>The root element (html) is the container for the viewport, or the window which you see the document.  Variable size!</li>
+				<li>In order to lay out content on the screen, there needs to be a container that you can place your content into.</li>
+				<li>For a single column, vertical stack, this is fairly easy: just place all the content in the  container.</li>
+				<li>For more complex layouts, (more than 1 column), you will need to create a container to hold your different content areas.</li>
+				<li>This is where a DIV comes in</li>
+				<li>A DIV is an area that can be defined in CSS as having the properties of a box</li>
+				<li>That box will act as a container for whatever goes inside</li>
+				<li>DIV elements can be floated or fixed.  Similarly, elements withing those divs can also be positioned relatively or absolutely</li>
+			</ul>
+
+
+
+
+
+
+			<h3>Div Layout Examples</h3>
+			<p>If CSS-based layouts are still a mystery, please take a look at some of these basic div based layouts and their associated CSS:</p>
+			<ul>
+				<li><a href="layouts/one/index.html">CSS Layout One - Two Column Fixed</a></li>
+				<li><a href="layouts/two/index.html">CSS Layout Two - Two Column Fluid</a></li>
+				<li><a href="layouts/three/index.html">CSS Layout Three - Three Column Fixed</a></li>
+				<li><a href="layouts/four/index.html">CSS Layout Four - Three Column Fluid</a></li>
+			</ul>
+			
+			<p>There are an infinite number of ways to arrange a page with CSS, so go out and create your own. Use some of the rules you learned today as guidelines.</p>
+			<p>A proposed layout building methodology</p>
+			<ol>
+				<li>design without limits (dont design with 'limitations' of CSS/HTML in mind)</li>
+				<li>set your test browser to default zoom size</li>
+				<li>create <code>div</code>s for each major region of content</li>
+				<li>if more than one element is part of a group, consider <code>div</code>ing it up</li>
+				<li>apply box model dimension properties</li>
+				<li>assign absolute and fixed positioning where applicable</li>
+				<li>assign float, relative positioning where applicable</li>
+				<li>add / remove quantities of content to see how layout behaves</li>
+				<li>change height and width of browser to see how layout behaves</li>
+				<li>if all else fails, consider using one of several templates made available online. if you use someone else's code, be sure to <strong>give credit where credit is due</strong> by adding a comment explaining where you found the original code.</li>
+			</ol>
+			</div>
+	
+<h2>Advanced CSS Layouts</h2>
+<div class="contblock">
+	<ul>
+		<li>Locating a footer at the bottom of the visible page, even when the page content is not as tall as the browser, requires judicious deployment of the CSS height property. <a href="/comp1950/downloads/stickyfooter.zip">Download a sample sticky footer layout.</a></li>
+		<li>CSS2 provides no method for one element to determe the height of another. This can make equal-height adjacent column layouts problematic. Several solutions are available, heres a <a href="http://matthewjamestaylor.com/blog/equal-height-columns-cross-browser-css-no-hacks">pure CSS multi column layout  solution</a> to the issue. <a href="/comp1950/downloads/multi_column_layout.zip">Download a sample multi-column layout</a></li>
+	</ul>
+
+</div>
+
+	
+			<h2>Navigation Lists</h2>
+			<div class="contblock">
+			<ul>
+				<li>One of the best ways to make your code more semantic: build list-based navigation</li>
+				<li>Lots of benefits: <ul>
+					<li>Add/Remove: changing your navigation is very easy in this method.  You need to think of your layout and design differently, but it might be worth it in the long run.</li>
+					<li>Image-less Browsers: there are many users out there who don't use images, and Lists are a great way to communicate information to those users</li>
+				</ul></li>
+				<li>The key is breaking the stereotype of the complex navigation</li>
+				<li>Keeping it simple can simplify your code and your layout</li>
+				<li>It's a mental shift for experienced coders</li>
+				<li><a href="http://css.maxdesign.com.au/listamatic/">List Navigation Examples</a></li>
+			</ul>
+			<p>Let's take a look at an <a href="list_nav.html">exercise to build a vertical navigation</a> built with an unordered list and styled in CSS.</p>
+			
+			</div>
+
+	<h2>Layout Exercise</h2>
+<div class="contblock">
+<ul>
+	<li>imlement a popular fixed width page layout that matches the basic behavior of <a href="layout_exercise_sample/">this example layout</a>. don't spoil the exercise by copying the code from the example, use it to determine the desired structure and behavior</li>
+	<li><a href="/comp1950/downloads/layout_exercise.zip">download the starting files</a>	</li>
+	<li>be sure to implement the following features<ul>
+		<li>the header and footer should be as wide as the browser</li>
+		<li>the navigation and the main section for content should be fixed width centered</li>
+		<li>the navigation links should be in an HTML unordered list, displaying horizontally and styled with css. you don't need to match the exact design of the example, but try to make an appealingly styled navigation</li>
+		<li>the social media icons should NOT be used individually. use the online <a href="http://csssprites.com/">sprite genrator</a> to build a single sprite image, and use that</li>
+		<li>the social media icons should include a hover effect</li>
+
+	</ul></li>
+	<li>some of the colors used in the example:<ul>
+		<li>	header/footer background - <span style="background-color:#450716;color:white;">#450716</span>
+		<li>header/footer borders: <span style="background-color:#AD6376;color:white;">#AD6376</span></li>
+		<li>main content area, yellow highlights, hover effects: <span style="background-color:#FFE47C;">#FFE47C</span></li></li>
+		<li>foreground text <span style="background-color:#444444;color:white;">#444444</span></li></li>
+	</ul></li>
+	<li>use a <a href="http://www.lipsum.com/">lorum ipsum generator</a> to create generic page content</li>
+	<li><a href="/comp1950/downloads/layout_exercise_solution.zip">download a sample solution</a>	</li> 
+</ul>
+</div>
+
+
+<h2>Summary</h2>
+<div class="contblock">
+<ul>
+		<li>If your page includes several icons or generic images that aren't a part of your foreground content, consider using sprites</li>
+		<li>Apply a CSS Reset of your choice to bring the various browser defaults into alignment, making for a more predictable and consistent page layout</li>
+		<li>Padding and Borders add to the dimensions of the CSS box model</li>
+		<li>Horizontal meeting margins are added, vertical meeting margins are collapsed</li>
+		<li>Practice all the CSS positioning techniques: <code>float, absolute, relative, fixed</code></li>
+		<li>Use divs or HTML 5 semantic tags to define page layouts. If you have difficulty building your desired layout, consider searching for CSS layout examples online</li>
+		<li>Use unordered lists <code>ul</code> for site navigation. This is the best semantic option, ideal for screen readers and search engines. </li>
+
+</ul>
+</div>
+
+
+<h2>Homework</h2>
+<div class="contblock">
+<ul>
+	<li>all homework must be published to the class server by midnight, the night before the following class</li>
+	
+<li>	<a href="/comp1950/downloads/comp1950_homework04.pdf">download the homework</a>
+	</li>
+</ul>
+</div>
+

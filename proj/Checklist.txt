@@ -46,7 +46,10 @@ COMP 1950 Final Project Check List:
 33. Validate all HTML 5										     
 34. Validate all CSS
 35. Ensure SEO used on all pages.
-
+36. Decide what CSS 3.0 animation should be used.  It must 
+    be agreed by all members that it makes the website
+    more functional but it should not make it look to
+    cheesy.  
 	
 *NOT REQUIRED
 1.  browse, search, login, view news, send email, call, explore. 
@@ -62,6 +65,7 @@ COMP 1950 Final Project Check List:
     users.  Just mention in the rationale how this would work. 
 7.  Do not include actual notes for the class.  Not required
     and using up precious time.
+8.  Techniques not covered in class like PHP, Flash.
 	
 MISC:
 1  Update rationale to mentioned techniques, examples,          Jason      no

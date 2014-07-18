@@ -54,6 +54,10 @@ B. Protosite                                                                Owne
     more functional but it should not make it look to
     cheesy.  
 	
+NOTE:
+1.  There will be no link from the proto-site back to the metasite.
+    I think the proto-site should be self contained.
+	
 *NOT REQUIRED
 1.  browse, search, login, view news, send email, call, explore. 
     We can mention this in the rationale that these could be done.           Jason     No

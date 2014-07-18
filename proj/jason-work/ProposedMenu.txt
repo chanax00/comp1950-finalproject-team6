@@ -1,0 +1,22 @@
+Menus
+
+
+Lectures    Exercises    QUizzes   CourseInfo      Resources            
+ session1    Session1a     quiz1     Timetable       (1 page as per existing)
+ session2    session1b     quiz2     room info
+ Session3    Session2a     quiz3     grading
+             Session2b               policies
+                                     Curriculum (http://www.bcit.ca/study/courses/comp1950) 
+
+
+Aside list:
+-bcit.ca
+-my.bcit.ca
+-students of COMP 1950
+
+
+right top:
+button:  login/sign-on
+
+right side:
+news.  Just put a div there.   I will just mention in rationale what it is.

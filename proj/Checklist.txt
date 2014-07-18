@@ -1,6 +1,6 @@
 COMP 1950 Final Project Check List:
 
-A. Meta Site (CSS different than protosite)                                 Owner     DraftDone?   CompletelyFinished?  TargetDate
+A. Meta Site (CSS different than protosite)                                 Owner     DraftDone?   CompletelyFinished?  TargetDate   
 1. Introduction Page-describes project and members of team.                 Jason      No
 2. Link to the Protosite: actual website                                    Jason      No
 3. SiteMap (links are not to work)                                          Jason
@@ -8,7 +8,7 @@ A. Meta Site (CSS different than protosite)                                 Owne
 
 
 
-B. Protosite                                                                Owner     DraftDone?   CompletelyFinished?  TargetDate
+B. Protosite                                                                Owner     DraftDone?   CompletelyFinished?  TargetDate                                                                            
 1.  link to section lecture
 2.  link to resources (text books & links to other website)
 3.  link to exercises

@@ -38,15 +38,16 @@ B. Protosite                                                                Owne
 20. Design the quiz form but do not need it working.  Can
     have a timer but do not have it working.
 22. Proto-site Home Page
-23. Proto-site Lecture Page                                        S&C        No
-24. Proto-site Quiz Page                                           Jason      No
-27. Provide Jason with list of CSS3 and Jquery for rationale       S&C        No	
+23. Proto-site Lecture Page                                                  S&C        No
+24. Proto-site Quiz Page    
+25. Proto-site Resource Page                                      
+27. Provide Jason with list of CSS3 and Jquery for rationale                 S&C        No	
 28. Allow website to be adjusted for 2 widths (but no for 
     smartphones) - user Media Query
 29. All Proto site works with 2 style sheets: normal view
 30. All Proto site works with 2 style sheets: Projector
 31. All Proto site styled for printing.
-32. Comment all code and use good tabbing.                         J,S,C
+32. Comment all code and use good tabbing.                                   J,S,C
 33. Validate all HTML 5										     
 34. Validate all CSS
 35. Ensure SEO used on all pages.
@@ -57,25 +58,25 @@ B. Protosite                                                                Owne
 	
 *NOT REQUIRED
 1.  browse, search, login, view news, send email, call, explore. 
-    We can mention this in the rationale that these could be done.  Jason     No
+    We can mention this in the rationale that these could be done.           Jason     No
 2.  Use of BCIT logo - do not do this.
 3.  Do not make GUI work with smartphones.  -not required and 
     wasting valuable time.
 4.  Do not use CMS - not required and waste of time.  Can 
-    mention in rationale that it could be used.                     Jason     No
-5.  Do not fully implement the online quiz.  Do not validate        Jason     No
+    mention in rationale that it could be used.                              Jason     No
+5.  Do not fully implement the online quiz.  Do not validate                 Jason     No
     or lockout user after timeout.                    
-6.  Do not implement protecting of these pages from invalid         Jason     No
+6.  Do not implement protecting of these pages from invalid                  Jason     No
     users.  Just mention in the rationale how this would work. 
 7.  Do not include actual notes for the class.  Not required
     and using up precious time.
 8.  Techniques not covered in class like PHP, Flash.
 	
 MISC:
-1  Update rationale to mentioned techniques, examples,          Jason      no
+1  Update rationale to mentioned techniques, examples,                       Jason      no
    and exercises are clearly described and resources
    can be easily accessed.
-2  Update rationale to use the adjectives:                      Jason   
+2  Update rationale to use the adjectives:                                   Jason   
    professional, enthusaiastic, encouraging,
    useful, educational, challenging, visually appealng,
    easy to use.

@@ -1,0 +1,9 @@
+Things to Do
+
+Home Page
+(1) When the user opens the page, a brief animation occurs.
+(2) User ID and password must be kept in cookies so that it can be used for quiz.
+
+Lecture Page
+(1) the link page can have lots of options.  The user can either view the whole list (alphabetical or by the flow of document) or view the current card only.  Or the current card and the previous card only.
+(2) The student can click on words to hilight important lines, which will be scored in cookies.

@@ -1,0 +1,40 @@
+/*
+
+	COMP 1950 Home Page CSS
+	File Name: 		basic.css
+	Author:			Calvin Jun
+	Student Number:	A00237412
+
+*/
+
+article{
+	width: 480px;
+	min-height: 200px;
+	background-color: white;
+	border: gray solid 1px;
+	box-shadow: 4px 4px 12px black;
+	margin: 12px 8px 48px;
+	padding: 8px 24px 60px;
+	position: relative;
+}
+
+#topic_list{
+	width: 400px;
+	min-height: 120px;
+	margin: 12px 16px 48px;
+	padding: 0px;
+	color: #dedede;
+	border: 1px black solid;
+	position: relative;
+}
+
+#topic_list ul{
+	font-family: "Verdana";
+	font-size: 1.1em;
+	margin: 24px 16px 24px 24px;
+	line-height: 130%;
+}
+
+#topic_list ul li{
+	cursor: pointer;
+}

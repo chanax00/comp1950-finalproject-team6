@@ -7,84 +7,132 @@
 
 */
 
+function appendSession(cstr)
+{
+	var session = readCookie("session");
+	var sessionStr = String(session);
+	if (session < 9)
+	{
+		sessionStr = String('0').concat(sessionStr);
+	}
+	return cstr+sessionStr;
+}
+
+function selectSession()
+{
+	var session = readCookie("session");
+	if (session == null || session == '')
+	{
+		$("#session_list ol li:nth-child(1)").css("color","yellow");
+		createCookie("session","01",365);
+	}
+	else
+	{
+		var iSession = 1;
+		var sessionNum = Number(session);
+		while (iSession > 0)
+		{
+			var nthChild = $("#session_list ol li:nth-child("+String(iSession)+")");
+			if (nthChild.css('color') == null || nthChild.css('color') == '') break;
+			if (iSession == sessionNum)
+			{
+				nthChild.css('color','yellow');
+			}
+			else nthChild.css('color','#dedede');
+			iSession++;
+		}
+	}
+}
+
 function showCard()
 {
+	var session = readCookie('session');
+	var cstr = readCookie('card'+session);
+	var nthChildLast = $("h2:nth-last-of-type(1)");
 	var iCard = 1;
-	while (iCard > 0)
+	while (1)
 	{
-		var nthChild = $("h2:nth-child("+String(iCard)+")");
-		if (nthChild.html() == "") break;
-		if (nthChild.html() == readCookie('card'))
+		nthChild = $("h2:nth-child("+String(iCard)+")");
+		if (nthChild.html() == cstr)
 		{
 			$("h2:nth-child("+String(iCard)+")").css('display','block');
 			$("h2:nth-child("+String(iCard)+")+div").css('display','block');
+			createCookie(cstr,nthChild.html(),365);
 			return;
 		}
+		if (nthChild.html() == nthChildLast.html()) break;
 		iCard++;
 	}
+	$("h2:nth-child(1)").css('display','block');
+	$("h2:nth-child(1)+div").css('display','block');
+	var session = readCookie('session');
+	createCookie('card'+session,$("h2:nth-child(1)").html(),365);
 }
 
 function hideCard()
 {
 	var iCard = 1;
-	while (iCard > 0)
+	var nthChildLast = $("h2:nth-last-of-type(1)");
+	while (1)
 	{
 		var nthChild = $("h2:nth-child("+String(iCard)+")");
-		if (nthChild.html() == "") break;
-		if (nthChild.html() == readCookie('card'))
+		var session = readCookie('session');
+		if (nthChild.html() == readCookie('card'+session))
 		{
 			$("h2:nth-child("+String(iCard)+")").css('display','none');
 			$("h2:nth-child("+String(iCard)+")+div").css('display','none');
 			return;
 		}
+		if (nthChild.html() == nthChildLast.html()) break;
 		iCard++;
 	}
 }
 
 function showPrevCard()
 {
-	var iCard = 1;
-	while (iCard > 0)
+	var iCard = 2;
+	var nthChildLast = $("h2:nth-last-of-type(1)");
+	$("h2").css('display','none');
+	$("h2+div").css('display','none');
+	while (1)
 	{
-		var nthChild = $("h2:nth-child("+String(iCard)+")");
-		if (nthChild.html() == "") break;
-		if (nthChild.html() == readCookie('card'))
+		var nthChild = $("h2:nth-of-type("+String(iCard)+")");
+		var session = readCookie('session');
+		if (nthChild.html() == readCookie('card'+session))
 		{
-			if (iCard - 2 > 0)
-			{
-				$("h2:nth-child("+String(iCard)+")").css('display','none');
-				$("h2:nth-child("+String(iCard)+")+div").css('display','none');
-				iCard-=2;
-				$("h2:nth-child("+String(iCard)+")").css('display','block');
-				$("h2:nth-child("+String(iCard)+")+div").css('display','block');
-				createCookie("card",$("h2:nth-child("+String(iCard)+")").html(),365);
-				selectCard();
-			}
+			$("h2:nth-of-type("+String(iCard-1)+")").css('display','block');
+			$("h2:nth-of-type("+String(iCard-1)+")+div").css('display','block');
+			createCookie("card"+session,$("h2:nth-of-type("+String(iCard-1)+")").html(),365);
+			selectCard();
 			return;
 		}
+		if (nthChild.html() == nthChildLast.html()) break;
 		iCard++;
 	}
+	$("h2:nth-of-type(1)").css('display','block');
+	$("h2:nth-of-type(1)+div").css('display','block');
+	createCookie("card"+session,$("h2:nth-of-type(1)").html(),365);
+	selectCard();
 }
 
 function showNextCard()
 {
 	var iCard = 1;
-	while (iCard > 0)
-	{
+	var nthChildLast = $("h2:nth-last-of-type(1)");
+	while(1) {
 		var nthChild = $("h2:nth-child("+String(iCard)+")");
-		if (nthChild.html() == "") break;
-		if (nthChild.html() == readCookie('card'))
+		if (nthChild.html() == nthChildLast.html()) break;
+		var session = readCookie('session');
+		if (nthChild.html() == readCookie('card'+session))
 		{
-			if ($("h2:nth-child("+String(iCard+2)+")").css("color") != null)
-			{
-				$("h2:nth-child("+String(iCard)+")").css('display','none');
-				$("h2:nth-child("+String(iCard)+")+div").css('display','none');
-				iCard+=2;
-				$("h2:nth-child("+String(iCard)+")").css('display','block');
-				$("h2:nth-child("+String(iCard)+")+div").css('display','block');
-				createCookie("card",$("h2:nth-child("+String(iCard)+")").html(),365);
-				selectCard();
-			}
+			$("h2:nth-child("+String(iCard)+")").css('display','none');
+			$("h2:nth-child("+String(iCard)+")+div").css('display','none');
+			iCard+=2;
+			$("h2:nth-child("+String(iCard)+")").css('display','block');
+			$("h2:nth-child("+String(iCard)+")+div").css('display','block');
+			var session = readCookie('session');
+			createCookie("card"+session,$("h2:nth-child("+String(iCard)+")").html(),365);
+			selectCard();
 			return;
 		}
 		iCard++;
@@ -93,26 +141,30 @@ function showNextCard()
 
 function selectCard()
 {
-	var card = readCookie("card");
-	if (card == null)
+	var session = readCookie('session');
+	var card = readCookie("card"+session);
+	if (card == null || card == '')
 	{
 		$("#card_list ul li:nth-child(1)").css("color","yellow");
 		var cardName = $($("#card_list ul li:nth-child(1)")).html();
-		createCookie("card",cardName,365);
+		var session = readCookie('session');
+		createCookie("card"+session,cardName,365);
 	}
 	else
 	{
 		var iCard = 1;
-		while (iCard > 0)
-		{
+		var nthChildLast = $("#card_list ul li:nth-last-of-type(1)");
+		while(1) {
 			var nthChild = $("#card_list ul li:nth-child("+String(iCard)+")");
-			if (nthChild.css('color') == null) break;
 			if (nthChild.html() == card)
 			{
 				nthChild.css('color','yellow');
+				var session = readCookie('session');
+				createCookie("card"+session,nthChild.html(),365);
 			}
 			else nthChild.css('color','#dedede');
 			iCard++;
+			if (nthChild.html() == nthChildLast.html()) break;
 		}
 	}
 }
@@ -145,19 +197,17 @@ function initCards()
 	showCard();
 	$("#card_list ul li").click(function(){
 		var iCard = 1;
-		while (iCard > 0)
-		{
+		var nthChildLast = $("#card_list ul li:nth-last-of-type(1)");
+		while(1) {
 			var nthChild = $("#card_list ul li:nth-child("+String(iCard)+")");
-			if (nthChild.css("color") == null) break;
-			if (nthChild.html() == readCookie('card'))
-			{
-				nthChild.css('color','#dedede');
-			}
+			nthChild.css('color','#dedede');
+			if (nthChild.html() == nthChildLast.html()) break;
 			iCard++;
 		}
 		hideCard();
 		var cardName = $(this).html();
-		createCookie("card",cardName,365);
+		var session = readCookie('session');
+		createCookie("card"+session,cardName,365);
 		$(this).css("color","yellow");
 		showCard();
 	});
@@ -170,8 +220,6 @@ function initLinks()
 	var iStr0 = strContent.search("<a");
 	if (iStr0 == -1) return;
 	strContent = strContent.slice(iStr0+2,strContent.length);
-//	iStr0 = strContent.search('>') + 1;
-//	var iLink = 1;
 	while (iStr0 != -1 && strContent.length > 0)
 	{
 		var url = "";
@@ -216,7 +264,6 @@ function initLinks()
 	$("#link_list").css("display","block");
 	$("#session_list").css("display","none");
 	$("#card_list").css("display","none");
-//	selectCard();
 	showCard();
 	$("#link_list ul li").click(function(){
 		var iCard = 1;
@@ -230,17 +277,11 @@ function initLinks()
 			}
 			iCard++;
 		}
-/*		hideCard();
-		var cardName = $(this).html();
-		createCookie("card",cardName,365);
-		$(this).css("color","yellow");
-		showCard(); */
 	});
 }
 
 function clickOption(option)
 {
-//	document.cookie = "option = " + option;
 	$("#icon_"+readCookie("option")).css("border","none");;
 	createCookie("option",option,365);
 	$("#icon_"+readCookie("option")).css("border","solid 2px yellow");;
@@ -252,6 +293,35 @@ function clickOption(option)
 			$("#link_list").css("display","none");
 			$("#customization").css("display","none");
 			$(".dark_panel").css("height",$("#session_list").css("height"));
+			selectSession();
+			showCard();
+			$("#session_list ol li").click(function(){
+				var currSession = 1;
+				var cstr = readCookie('session');
+				if (cstr != "") currSession = Number(cstr);
+				var iSession = 1;
+				while (iSession > 0)
+				{
+					var nthChild = $("#session_list ol li:nth-child("+String(iSession)+")");
+					if (nthChild.css("color") == null || nthChild.css("color") == "") break;
+					if (currSession == iSession)
+					{
+						nthChild.css('color','#dedede');
+					}
+					else if ($(this).html() == nthChild.html())
+					{
+						cstr = iSession.toString();
+						if (cstr.length < 2) cstr = String(0).concat(cstr);
+						createCookie("session",cstr,365);
+					}
+					iSession++;
+				}
+				$(this).css("color","yellow");
+				location.reload();
+//				hideCard();
+//				document.getElementById("content").
+//				showCard();				
+			});
 			break;
 		case 'cards':
 			initCards();
@@ -284,30 +354,6 @@ function clickOption(option)
 function showPanel()
 {
 	clickOption(readCookie('option'));
-/*	$(".dark_panel").css("height",$("#session_list").css("height"));
-	switch (readCookie('option'))
-	{
-		default: case 'sessions':
-			$(".dark_panel").css("height",$("#session_list").css("height"));
-			$("#session_list").css("display","block");
-			$("#card_list").css("display","none");
-			$("#link_list").css("display","none");
-			$("#customization").css("display","none");
-			break;
-		case 'cards':
-			initCards();
-			break;
-		case 'links':
-			initLinks();
-			break;
-		case 'customization':
-			$(".dark_panel").css("height",$("#customization").css("height"));
-			$("#session_list").css("display","none");
-			$("#card_list").css("display","none");
-			$("#link_list").css("display","none");
-			$("#customization").css("display","block");
-			break;
-	} */
 }
 
 $(document).ready(function(){
@@ -319,3 +365,4 @@ $(document).ready(function(){
 	});
 	showPanel();
 })
+

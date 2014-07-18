@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!-- 
 
-	COMP 1950 Homework #7: 404 Error demonstration
-	File Name: 		lecture.html
+	COMP 1950 Final Project: Lecture Page
+	File Name: 		lecture.php
 	Author:			Calvin Jun
 	Student Number:	A00237412
 	
@@ -12,6 +12,7 @@
 		<title>COMP 1950 Lecture</title>
 		<meta charset = "utf-8"/>
 		<link rel = "stylesheet" href = "./css/basic.css" title = "Basic Page Style" />
+		<link rel = "stylesheet" href = "./css/lecture.css" title = "Basic Page Style" />
 		<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 		<script type = "text/javascript" src = "http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type = "text/javascript" src = "./js/common.js"></script>
@@ -22,7 +23,14 @@
 			<section>
 				<article>
 					<div id = "content">
-					<?php include('./lecture_content/session01.html'); ?>
+					<?php
+						if (!isset($_COOKIE['session']))
+						{
+							include('./lecture_content/session01.html');
+							setCookie('session','01');
+						}
+						else include('./lecture_content/session' . $_COOKIE['session'] . '.html');
+					?>
 					</div>
 					<div id = "arrow_right"></div>
 					<div id = "arrow_left"></div>
@@ -56,20 +64,6 @@
 				</div>
 			</section>
 		</div>
-		<div id = 'top_panel'></div>
-		<div class = 'body'>
-			<nav id = "main_nav">
-				<div id = "main_nav_home"><div></div></div>
-				<div id = "main_nav_lecture"><div></div></div>
-				<div id = "main_nav_practice"><div></div></div>
-				<div id = "main_nav_quiz"><div></div></div>
-			</nav>
-			<div id = "option_icons">
-				<div id = "icon_sessions" class = "option_icon" onclick = "clickOption('sessions')"></div>
-				<div id = "icon_cards" class = "option_icon" onclick = "clickOption('cards')"></div>
-				<div id = "icon_links" class = "option_icon" onclick = "clickOption('links')"></div>
-				<div id = "icon_customization" class = "option_icon" onclick = "clickOption('customization')"></div>
-			</div>
-		</div>
+		<?php include('top_panel.html'); ?>
 	</body>
 </html>

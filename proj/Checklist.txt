@@ -37,7 +37,7 @@ B. Protosite                                                                Owne
     have a timer but do not have it working.
 22. Proto-site Home Page
 23. Proto-site Lecture Page                                                  S&C        No
-24. Proto-site Quiz Page    
+24. Proto-site Quiz Page                                                     J
 25. Proto-site Resource Page                                      
 27. Provide Jason with list of CSS3 and Jquery for rationale                 S&C        No	
 28. Allow website to be adjusted for 2 widths (but no for 
